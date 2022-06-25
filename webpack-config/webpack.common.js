@@ -1,21 +1,22 @@
-const webpack = require("webpack");
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const path = require('path')
 
-const isProduction = (process.env.NODE_ENV = "PRODUCTION");
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
+const isProduction = (process.env.NODE_ENV = 'PRODUCTION')
 
 module.exports = {
-  entry: path.resolve(__dirname, "..", "./src/index.tsx"),
+  entry: path.resolve(__dirname, '..', './src/index.tsx'),
   output: {
-    filename: "[name].[fullhash].js",
-    path: path.resolve(__dirname, "..", "build"),
+    filename: '[name].[fullhash].js',
+    path: path.resolve(__dirname, '..', 'build'),
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: ['.tsx', '.ts', '.js'],
     alias: {
-      "@": path.resolve(__dirname, "../", "./src/"),
+      '@': path.resolve(__dirname, '../', './src'),
     },
   },
   module: {
@@ -25,25 +26,25 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
           },
         ],
       },
       {
         test: /\.hbs$/,
-        use: ["handlebars-loader"],
+        use: ['handlebars-loader'],
       },
       {
         test: /\.(ts|js)$/,
-        enforce: "pre",
-        use: ["source-map-loader"],
+        enforce: 'pre',
+        use: ['source-map-loader'],
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
         use: {
-          loader: "file-loader",
+          loader: 'file-loader',
           options: {
-            name: "[name].[contenthash].[ext]",
+            name: '[name].[contenthash].[ext]',
           },
         },
       },
@@ -51,12 +52,15 @@ module.exports = {
         test: /.(png|jpg|gif)$/i,
         use: [
           {
-            loader: "url-loader",
+            loader: 'url-loader',
             options: {
               limit: 4000,
               name() {
-                if (!isProduction) return "[path][name].[ext]";
-                else return "[contenthash].[ext]";
+                if (!isProduction) {
+                  return '[path][name].[ext]'
+                } else {
+                  return '[contenthash].[ext]'
+                }
               },
             },
           },
@@ -66,7 +70,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "..", "./public/index.hbs"),
+      template: path.resolve(__dirname, '..', './public/index.hbs'),
       minify: isProduction
         ? {
             collapseWhitespace: true,
@@ -76,14 +80,14 @@ module.exports = {
         : false,
     }),
     new webpack.SourceMapDevToolPlugin({
-      filename: "[file].map",
+      filename: '[file].map',
     }),
     new webpack.DefinePlugin({
       IS_PRODUCTION: isProduction,
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
-      patterns: [{ from: "public/images", to: "images/" }],
+      patterns: [{ from: 'public/images', to: 'images/' }],
     }),
   ],
-};
+}
