@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+yarn.lock
+yarn-error.log
+package-lock.json
+
+# os
+.DS_Store
+
+# production
+build/
+
+# env
+.env
+.env.dev
+.env.local
+.env.test
+
+# testing
+/coverage
+
+# log
+*.log*
+
+# typescript
+*.tsbuildinfo
