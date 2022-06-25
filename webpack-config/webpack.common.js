@@ -17,6 +17,10 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
       '@': path.resolve(__dirname, '../', './src'),
+      '@components': path.resolve(__dirname, '../', './src/components'),
+      '@page': path.resolve(__dirname, '../', './src/page'),
+      '@styles': path.resolve(__dirname, '../', './src/styles'),
+      '@hooks': path.resolve(__dirname, '../', './src/hooks'),
     },
   },
   module: {
@@ -31,13 +35,13 @@ module.exports = {
         ],
       },
       {
-        test: /\.hbs$/,
-        use: ['handlebars-loader'],
-      },
-      {
         test: /\.(ts|js)$/,
         enforce: 'pre',
         use: ['source-map-loader'],
+      },
+      {
+        test: /\.hbs$/,
+        use: ['handlebars-loader'],
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
