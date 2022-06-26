@@ -7,11 +7,15 @@ declare module 'styled-components' {
       $gray700: string
       $gray800: string
     }
+    media: {
+      desktop: string
+    }
     animation: (
       name: string,
       duration: number,
       delay?: number,
       fill?: string,
+      timing?: string,
     ) => FlattenSimpleInterpolation
   }
 }
