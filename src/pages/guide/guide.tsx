@@ -1,3 +1,5 @@
+import AppLogo from '@/components/appLogo'
+
 import * as Style from './guide.style'
 
 function Guide() {
@@ -5,7 +7,7 @@ function Guide() {
     <Style.GuideContainer>
       <Style.OutcomeContainer>
         <Style.Inner>
-          <Style.AppLogo>2021년 12월 기준</Style.AppLogo>
+          <AppLogo />
         </Style.Inner>
       </Style.OutcomeContainer>
     </Style.GuideContainer>
