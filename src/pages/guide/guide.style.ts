@@ -37,4 +37,18 @@ const Stats = styled.ul`
   }}
 `
 
-export { GuideContainer, OutcomeContainer, Inner, Stats }
+const Awards = styled.ul`
+  ${({ theme }) => {
+    const { media } = theme
+
+    return css`
+      white-space: nowrap;
+
+      ${media.desktop} {
+        margin: 50px 0px 140px 623px;
+      }
+    `
+  }}
+`
+
+export { GuideContainer, OutcomeContainer, Inner, Stats, Awards }

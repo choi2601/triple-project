@@ -9,7 +9,7 @@ const keyframesInfo: KeyframesInfoType = {
   fadeInFromBottom: keyframes`
     from {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(30px);
       }
       to {
         opacity: 1;

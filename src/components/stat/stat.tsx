@@ -1,7 +1,7 @@
 import * as Style from './stat.style'
-import { StatProps } from './stat.type'
+import { StatPropsType } from './stat.type'
 
-function Stat({ unit, category }: StatProps) {
+function Stat({ unit, category }: StatPropsType) {
   return (
     <Style.StatContent>
       <strong>700{unit}</strong>

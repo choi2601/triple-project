@@ -9,7 +9,7 @@ const AppLogoContent = styled.div`
       background-repeat: no-repeat;
       text-align: center;
       color: ${color.$gray700};
-      ${animation('fadeInFromBottom', 700, 0, 'forwards', 'ease-out')};
+      ${animation('fadeInFromBottom', 700, 50, 'forwards', 'ease-out')};
 
       ${media.desktop} {
         position: absolute;

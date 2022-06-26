@@ -1,6 +1,6 @@
-interface StatProps {
+interface StatPropsType {
   unit: string
   category: string
 }
 
-export type { StatProps }
+export type { StatPropsType }
