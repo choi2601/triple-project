@@ -1,6 +1,6 @@
 import { DefaultTheme } from 'styled-components'
 
-import { color } from './constant'
+import { color } from './const'
 import { animation } from './mixin'
 
 const theme: DefaultTheme = {
