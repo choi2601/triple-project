@@ -1,10 +1,11 @@
 import { DefaultTheme } from 'styled-components'
 
-import { color, animation } from './constant'
+import { color } from './constant'
+import { animation } from './mixin'
 
 const theme: DefaultTheme = {
   color,
   animation,
 }
 
-export { theme }
+export default theme

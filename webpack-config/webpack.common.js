@@ -11,7 +11,7 @@ module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
   output: {
     filename: '[name].[fullhash].js',
-    path: path.resolve(__dirname, '..', 'build'),
+    path: path.resolve(__dirname, '..', './build'),
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
