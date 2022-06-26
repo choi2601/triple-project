@@ -1,0 +1,21 @@
+{
+  "stats": [
+    { "id": 1, "unit": "만 명", "category": "여행자" },
+    { "id": 2, "unit": "만 개", "category": "여행 리뷰" },
+    { "id": 3, "unit": "만 명", "category": "여행 일정" }
+  ],
+  "awards": [
+    {
+      "id": 1,
+      "market": "2018 구글 플레이스토어",
+      "record": "올해의 앱 최우수상 수상",
+      "imgSrc": "/images/play-store2x.png"
+    },
+    {
+      "id": 2,
+      "market": "2018 애플 앱스토어",
+      "record": "오늘의 여행앱 선정",
+      "imgSrc": "/images/badge-apple4x.png"
+    }
+  ]
+}

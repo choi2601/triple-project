@@ -1,7 +1,14 @@
 import * as Style from './award.style'
+import { AwardPropsType } from './award.type'
 
-function Award() {
-  return <Style.AwardContent>AwardContent</Style.AwardContent>
+function Award({ market, record, imgSrc }: AwardPropsType) {
+  return (
+    <Style.AwardContent imgSrc={imgSrc}>
+      {market}
+      <br />
+      {record}
+    </Style.AwardContent>
+  )
 }
 
 export default Award

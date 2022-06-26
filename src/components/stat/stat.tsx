@@ -1,7 +1,14 @@
 import * as Style from './stat.style'
+import { StatPropsType } from './stat.type'
 
-function Stat() {
-  return <Style.StatContent>StatContent</Style.StatContent>
+function Stat({ unit, category }: StatPropsType) {
+  return (
+    <Style.StatContent>
+      <strong>700{unit}</strong>
+      &nbsp;
+      {category}
+    </Style.StatContent>
+  )
 }
 
 export default Stat
