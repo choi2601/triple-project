@@ -24,4 +24,17 @@ const Inner = styled.div`
   }}
 `
 
-export { GuideContainer, OutcomeContainer, Inner }
+const Stats = styled.ul`
+  ${({ theme }) => {
+    const { media } = theme
+
+    return css`
+      ${media.desktop} {
+        margin-left: 623px;
+        padding-top: 150px;
+      }
+    `
+  }}
+`
+
+export { GuideContainer, OutcomeContainer, Inner, Stats }
