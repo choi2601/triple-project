@@ -14,8 +14,13 @@ function Guide() {
         <Style.Inner>
           <AppLogo />
           <Style.Stats>
-            {stats.map(({ id, unit, category }) => (
-              <Stat key={`${id}-${category}`} unit={unit} category={category} />
+            {stats.map(({ id, unit, category, end }) => (
+              <Stat
+                key={`${id}-${category}`}
+                unit={unit}
+                category={category}
+                end={end}
+              />
             ))}
           </Style.Stats>
           <Style.Awards>
