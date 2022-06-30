@@ -1,10 +1,14 @@
 import * as Style from './stat.style'
 import { StatPropsType } from './stat.type'
 
-function Stat({ unit, category }: StatPropsType) {
+import useCount from '@hooks/useCount'
+
+function Stat({ unit, category, end }: StatPropsType) {
+  const { count } = useCount(end, unit)
+
   return (
     <Style.StatContent>
-      <strong>700{unit}</strong>
+      <strong ref={count} />
       &nbsp;
       {category}
     </Style.StatContent>

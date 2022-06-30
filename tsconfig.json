@@ -16,7 +16,9 @@
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
-      "@hooks/*": ["hooks/*"]
+      "@hooks/*": ["hooks/*"],
+      "@utils/*": ["utils/*"],
+      "@constants/*": ["constants/*"]
     }
   },
   "include": ["src"],

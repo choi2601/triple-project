@@ -7,7 +7,7 @@ const StatContent = styled.li`
     return css`
       opacity: 0;
       color: ${color.$gray};
-      ${animation('fadeInFromBottom', 700, 340, 'forwards', 'ease-out')};
+      ${animation('fadeInFromBottom', 700, 200, 'forwards', 'ease-out')};
 
       & > strong {
         font-weight: bold;
