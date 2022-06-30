@@ -4,7 +4,8 @@ const calcStepTime = (currentProgress: number) => {
   if (currentProgress === END_POINT) {
     return 1
   }
-  const progressOfAppliedStep = currentProgress + (1 - currentProgress) * 0.1
+  const progressOfAppliedStep =
+    currentProgress + (END_POINT - currentProgress) * 0.97
   return progressOfAppliedStep
 }
 
