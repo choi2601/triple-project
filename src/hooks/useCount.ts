@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef } from 'react'
 
-import { calcAcceldProgress } from '@/utils/calcAcceldProgress'
+import { calcAccelerateProgress } from '@/utils/calcAccelerateProgress'
 
 import {
   DEFAULT_FRAME_INTERVAL,
@@ -15,8 +15,8 @@ const useCount = (end: number, unit: string) => {
     const timerId = setInterval(() => {
       frame.current++
       const progress = frame.current / TOTAL_FRAME_DURATION
-      const acceldProgress = calcAcceldProgress(progress)
-      const currentCount = Math.round(end * acceldProgress)
+      const acceleratedProgress = calcAccelerateProgress(progress)
+      const currentCount = Math.round(end * acceleratedProgress)
 
       if (count.current) {
         count.current.innerHTML = `${currentCount}${unit}`

@@ -1,6 +1,6 @@
 import { END_POINT } from '@constants/formula'
 
-const calcAcceldProgress = (currentProgress: number) => {
+const calcAccelerateProgress = (currentProgress: number) => {
   if (currentProgress === END_POINT) {
     return 1
   }
@@ -10,4 +10,4 @@ const calcAcceldProgress = (currentProgress: number) => {
   return acceldProgress
 }
 
-export { calcAcceldProgress }
+export { calcAccelerateProgress }
