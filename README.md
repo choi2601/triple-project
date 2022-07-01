@@ -53,11 +53,11 @@ Project Start For Development
 
 `$ npm run start`
 
-Project Start For Development
+Project Build For Development
 
 `$ npm run dev`
 
-Project Start For Production
+Project Build For Production
 
 `$ npm run build`
 
