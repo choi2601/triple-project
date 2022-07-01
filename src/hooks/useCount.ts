@@ -1,34 +1,34 @@
 import { useLayoutEffect, useRef } from 'react'
 
-import { calcStepTime } from '@utils/calcStepTime'
-import { TOTAL_FRAME_DURATION } from '@constants/formula'
+import { calcAcceldProgress } from '@/utils/calcAcceldProgress'
+
+import {
+  DEFAULT_FRAME_INTERVAL,
+  TOTAL_FRAME_DURATION,
+} from '@constants/formula'
 
 const useCount = (end: number, unit: string) => {
-  const frame = useRef<number>(0)
   const count = useRef<HTMLElement | null>(null)
-
-  const animate = () => {
-    const CurrentProgress = frame.current / TOTAL_FRAME_DURATION
-    const calcedProgress = calcStepTime(CurrentProgress)
-
-    const currentCount = Math.round(calcedProgress * end)
-
-    frame.current = requestAnimationFrame(animate)
-
-    if (end <= currentCount) {
-      cancelAnimationFrame(frame.current)
-    }
-
-    if (count.current) {
-      count.current.innerHTML = `${currentCount}${unit}`
-    }
-  }
+  const frame = useRef(0)
 
   useLayoutEffect(() => {
-    animate()
+    const timerId = setInterval(() => {
+      frame.current++
+      const progress = frame.current / TOTAL_FRAME_DURATION
+      const acceldProgress = calcAcceldProgress(progress)
+      const currentCount = Math.round(end * acceldProgress)
+
+      if (count.current) {
+        count.current.innerHTML = `${currentCount}${unit}`
+      }
+
+      if (currentCount === end) {
+        clearInterval(timerId)
+      }
+    }, DEFAULT_FRAME_INTERVAL)
 
     return () => {
-      cancelAnimationFrame(frame.current)
+      clearInterval(timerId)
     }
   })
 
