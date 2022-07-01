@@ -14,7 +14,7 @@ const AwardContent = styled.li<AwardContentPropsType>`
       opacity: 0;
       color: ${color.$gray800};
       font-weight: bold;
-      ${animation('fadeInFromBottom', 700, 100, 'forwards', 'ease-out')};
+      ${animation('shallowFadeInFromBottom', 700, 100, 'forwards', 'ease-out')};
 
       ${media.desktop} {
         height: 54px;
